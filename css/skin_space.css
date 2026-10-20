@@ -1,0 +1,76 @@
+/**
+ * Space Skin
+ *
+ * This file just defines a UI color scheme. Duplicate it if you want to create
+ * another color scheme.
+ */
+
+/***** Main *****/
+.groovepizza {
+    background-color: #3d2e7f;
+    background-image: url('../img/star-bg.svg');
+}
+
+/*::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    width: 8px;
+    background: #fff;
+}
+
+::-webkit-scrollbar {
+    background: #6359c1;
+    width: 10px;
+}*/
+
+/***** Interface *****/
+.main-menu {
+    background: #4d38a0;
+}
+
+.sub-menu {
+    background: #5640b2;
+}
+
+.main-menu button {
+    background: #3d2e7f;
+    color: #e1e1e1;
+}
+
+.main-menu button.active {
+    background: #0074ff;
+}
+
+/***** Timeline *****/
+.play-button {
+    fill: #fff;
+}
+
+.play-button circle {
+    fill: #6359c1;
+}
+
+.user-grooves button.active {
+    background: #0074ff;
+}
+
+.pizza-transport {
+    fill: #2c2563;
+}
+
+/***** Sliders *****/
+.slider text {
+    fill: #e1e1e1;
+}
+
+.slider-bg {
+    fill: #5845c4;
+}
+
+.slider-progress {
+    fill: #6359c1;
+}
+
+/***** Pizza ******/
+.pizza_rim {
+    fill: #4d38a0;
+}

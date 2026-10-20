@@ -1,0 +1,695 @@
+/** Page Styling **************************************************************/
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+/** General Groove Pizza Styling **********************************************/
+.groovepizza {
+    font-family: 'Lato', sans-serif;
+}
+
+.gp-viewport {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/** UI Styling ****************************************************************/
+.gp-menu {
+    width: 120px;
+    height: calc(100% - 190px);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-menu button.logo {
+    width: 120px;
+    height: 140px;
+    background: url(../img/logo.svg) no-repeat center center;
+    border-bottom: solid 1px #fff;
+    margin: 0 0 5px 0;
+    border-radius: 0;
+}
+
+.main-menu button.share {
+    background: url(../img/share.svg) no-repeat center center;
+    background-size:90%;
+    border-radius:0;
+    padding-top: 31px;
+}
+
+.main-menu button.share.active {
+    background: url(../img/share-active.svg) no-repeat center center;
+    background-size:90%;
+    border-radius:0;
+}
+
+/* Horizontal layout */
+.gp-menu.horizontal {
+    height: 100px;
+    width: 100%;
+}
+
+.main-menu.horizontal {
+    flex-direction: row;
+}
+
+.main-menu.horizontal button.logo {
+    width: 103px;
+    height: 100%;
+    margin: 0 5px 0 0;
+    border-bottom: none;
+    border-right: solid 1px #fff;
+}
+
+.main-menu button {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    border: none;
+    margin: 5px;
+    outline: none;
+}
+
+
+/*button:hover {
+    background: #fff;
+}*/
+
+#custom-kit-widget {
+    position: fixed;
+    /*top: 14px;*/
+    top: 30px;
+    left: 255px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    /*height: 125px;*/
+    height: 200px;
+    /*width: 125px;*/
+    width: 200px;
+}
+
+.widget-hide {
+    display: none !important;
+}
+
+.widget-drag-over {
+    background: #ffe300 !important;
+}
+
+#custom-instrument-1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #716dbf;
+    /*#afded7 --- Logo color*/
+}
+
+#custom-instrument-2 {
+    position: absolute;
+    height: 66%;
+    width: 66%;
+    background: #6359c1;
+    /*#86d1d4 --- Logo color*/
+}
+
+#custom-instrument-3 {
+    position: absolute;
+    height: 33%;
+    width: 33%;
+    background: #5845c4;
+    /*#55c4c6 --- Logo color*/
+}
+
+.custom-instrument-ring {
+    border-radius: 50%;
+}
+
+.custom-instrument-label {
+    display: flex;
+    position: absolute;
+    /*height: 23px;*/
+    height: 34px;
+    width: 200px;
+    left: 50%;
+    bottom: 0;
+    background: inherit;
+    z-index: 2;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    color:white;
+    font-size:14px;
+}
+
+.custom-instrument-label span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+}
+
+/* About Flyin */
+.about {
+    padding: 20px;
+    padding-top:4px;
+    color: #e1e1e1;
+    text-align: center;
+}
+
+.about a {
+    color: #0074ff;
+    text-decoration: none;
+}
+
+.about p {
+    margin: 0.5em;
+}
+
+/* My Pizzas Menu */
+.avatar {
+    width:32px;
+    margin-top:5px
+}
+
+.my-pizzas {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.my-pizzas button {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    border: solid 3px #fff;
+    outline: none;
+}
+
+.my-pizzas button:first-child {
+    margin-top:10px;
+}
+
+#user-status {
+    padding:0px;
+    text-align:center;
+    font-size:14px;
+}
+
+#login, #new-groove {
+    border: none;
+    color: black;
+    /*width: 50px;*/
+    height: 50px;
+    font-size: 14px;
+    outline: none;
+    margin: 5px;
+    line-height: 8;
+    text-align:center;
+}
+
+#login {
+    background: url(../img/login.svg) no-repeat center center;
+}
+
+.logout {
+    background: url(../img/logout.svg) no-repeat center center !important;
+}
+
+#new-groove {
+    background: url(../img/add-groove.svg) no-repeat center center;
+    font-style:italic;
+    line-height: 1;
+    /*word-break:break-all; !* TODO: not sufficient *!*/
+}
+
+#groove-trash {
+    border: none;
+    width: 24px;
+    height: 24px;
+    background: url(../img/trash.svg) no-repeat center center;
+    outline: none;
+    padding-left:30px;
+}
+
+.user-grooves {
+    /*overflow-y: scroll;*/
+}
+
+.user-grooves button {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    border: solid 3px #fff;
+}
+
+/* Specials Menu */
+.specials-menu {
+    text-align: center;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+}
+
+.horizontal .specials-menu {
+    overflow-y: auto;
+    overflow-x: scroll;
+    display: flex;
+}
+
+.specials-menu button {
+    width: 80px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    outline: none;
+    color: #e1e1e1;
+}
+
+.specials-menu button:first-child {
+    margin-top:15px;
+}
+
+.horizontal .specials-menu button {
+    margin: 0 5px;
+    flex-shrink: 0;
+}
+
+.horizontal .specials-menu svg {
+    width: 65px;
+    height: 65px;
+}
+
+.specials-menu button span {
+    display: block;
+    margin-top: 2px;
+}
+
+/* Shape Menu */
+.shape-menu {
+    padding: 10px;
+    height: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.shape-menu span {
+    text-align: center;
+    color: #e1e1e1;
+}
+
+.horizontal .shape-menu {
+    flex-direction: row;
+    padding: 15px 10px 5px 10px;
+}
+
+.horizontal .shape-menu span {
+    width: calc(100% - 20px);
+    position: absolute;
+    top: 0;
+}
+
+.shape-menu svg {
+    flex-shrink: 1;
+}
+
+.shape-icon {
+    touch-action: none; /* Used for MS pointer events */
+}
+
+.shape-icon path {
+    fill: #3d2e7f;
+}
+
+.shape-icon text {
+    fill: #e1e1e1;
+    cursor: default;
+}
+
+.draggable-shape {
+    position: absolute;
+}
+
+.draggable-shape .shape-icon path {
+    fill: #0074ff;
+}
+
+/* Share Menu */
+.share-menu {
+    text-align: center;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+}
+
+.horizontal .share-menu {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: scroll;
+    display: flex;
+}
+
+.menu-button {
+    border: none;
+    max-width: 85px;
+    font-size: 11px;
+    outline: none;
+    box-sizing: content-box;
+    padding-top: 55px;
+    text-align:center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: top center;
+    
+    color: #e1e1e1; /* TODO: Move this to skin */
+}
+
+.horizontal .menu-button {
+    margin: 5px 0 0 0;
+}
+
+.menu-button:active {
+    color: #0074ff;
+}
+
+#export-noteflight {
+    background-image: url(../img/noteflight.svg);
+}
+
+#export-noteflight:active {
+    background-image: url(../img/noteflight_active.svg);
+}
+
+#export-soundtrap {
+    background-image: url(../img/soundtrap.svg);
+}
+
+#export-soundtrap:active {
+    background-image: url(../img/soundtrap_active.svg);
+}
+
+#export-audio {
+    background-image: url(../img/download_audio.svg);
+}
+
+#export-audio:active {
+    background-image: url(../img/download_audio_active.svg);
+}
+
+#export-midi {
+    background-image: url(../img/download_midi.svg);
+}
+
+#export-midi:active {
+    background-image: url(../img/download_midi_active.svg);
+}
+
+#share-twitter, #share-facebook {
+    display:inline-block;
+    text-decoration:none;
+    padding-top: 52px;
+    margin-top:4px;
+}
+
+.horizontal #share-twitter, .horizontal #share-facebook {
+    padding-top: 57px;
+    margin-top:8px;
+}
+
+#share-twitter {
+    background-image: url(../img/twitter.svg);
+}
+
+.horizontal #share-twitter {
+    margin-left:3px;
+}
+
+#share-facebook {
+    background-image: url(../img/facebook.svg);
+}
+
+.horizontal #share-facebook {
+    margin-right:3px;
+}
+
+#share-url {
+    margin: 5px;
+    width: calc(100% - 16px);
+    box-sizing: border-box;
+    height:22px;
+    font-size:small;
+    text-align:center;
+    background-color:#3d2e7f;
+    color:#716dbf;
+    border:none;
+    padding-left:2px;
+}
+
+.horizontal #share-url {
+    width: 100px;
+    display: block;
+    margin-top: 27px;
+}
+
+.share-url-caption {
+    display: initial;
+    max-width: 80px;
+        font-size: 11px;
+    text-align:center;
+    text-transform: uppercase;
+    color: #e1e1e1; /* TODO: Move this to skin */
+}
+
+.horizontal .share-url-caption {
+    position: relative;
+    top: 5px;
+}
+
+.share-menu .share-url-caption {
+    display: block;
+    max-width: none;
+    margin: 6px;
+    text-transform: none;
+}
+.share-menu #retry-save, .share-menu #download-recovery {
+    padding: 8px;
+    border: 1px solid #aaa3df;
+    border-radius: 4px;
+    margin: 6px;
+    max-width: 120px;
+    text-transform: none;
+    cursor: pointer;
+}
+.share-menu button:disabled, .share-menu [aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: default;
+}
+.horizontal .share-menu .setting-section.last {
+    min-width: 280px;
+    overflow-y: auto;
+}
+.horizontal .share-menu .share-url-caption {
+    top: 0;
+}
+.horizontal .share-menu #share-url {
+    width: calc(100% - 16px);
+    margin-top: 5px;
+}
+
+/* Kit Selection */
+.kit-button circle {
+    stroke: #fff;
+    stroke-width: 1.2;
+}
+
+.kit-button text {
+    text-anchor: middle;
+    fill: #fff;
+}
+
+/* Settings */
+.setting-section {
+    padding-top: 10px;
+    text-align: center;
+    border-bottom: solid 1px #2c2563;
+}
+
+.horizontal .setting-section {
+    padding-top: 0;
+    height: 100%;
+    vertical-align: top;
+    display: inline-block;
+    border-bottom: none;
+    border-right: solid 1px #2c2563;
+    flex-shrink: 0;
+}
+
+.setting-section.last {
+    border:none;
+    margin-bottom: 10px;
+}
+
+.horizontal .setting-section.last {
+    margin-bottom: 0;
+}
+
+.slider-target {
+    fill: transparent;
+    touch-action: none; /* Used for MS pointer events */
+}
+
+/* Timeline */
+.timeline-button rect.timeline-button-bg {
+    fill: #6359c1;
+}
+
+.timeline-button .background {
+    fill: #716dbf;
+}
+
+.timeline-button.muted rect.timeline-button-bg, .timeline-button.disabled rect.timeline-button-bg {
+    fill: #2c2563;
+}
+
+.timeline-button:not(.current) .shape {
+    fill: #2c2563;
+    stroke: #2c2563;
+}
+
+.timeline-button.disabled .shape {
+    fill: transparent;
+    stroke: transparent;
+}
+
+/** Pizza Styling *************************************************************/
+.ring.ring_0 {
+    /*fill: #d1d1d1;*/
+}
+
+.ring.ring_1 {
+    fill: #fff;
+    opacity: 0.2;
+}
+
+.ring.ring_2 {
+    fill: #fff;
+    opacity: 0.2;
+}
+
+.ring-control {
+    opacity: 0;
+    touch-action: none; /* Used for MS pointer events */
+}
+
+.center {
+    fill: #999;
+    stroke: #fff;
+    stroke-width: 2;
+}
+
+/*.beat.active.ring_0 {
+    fill: #dccf33;
+}
+
+.beat.active.ring_1 {
+    fill: #eb1971;
+}
+
+.beat.active.ring_2 {
+    fill: #3b2f77;
+}*/
+
+.beat.current {
+    r: 8;
+}
+
+.beat-control {
+    opacity: 0;
+}
+
+.playhead {
+    opacity: 0.4;
+    fill: #fff;
+}
+
+/** Shape Preset **************************************************************/
+.shape {
+    stroke-width: 6;
+    stroke-linejoin: round;
+    opacity: 0.8;
+}
+
+.shape.icon {
+    stroke-width: 2;
+}
+
+/** Rotation Media Query ******************************************************/
+.gp-rotation-prompt {
+    display: none;
+}
+
+@media (max-width: 879px) and (orientation: landscape) {
+    .groovepizza.mobile .gp-viewport,
+    .groovepizza.mobile .gp-menu {
+        display: none;
+    }
+    
+    .gp-rotation-prompt {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .gp-rotation-prompt img {
+        height: 50%;
+        display: block;
+    }
+    
+    .gp-rotation-prompt p {
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+.gp-save-status {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    z-index: 10;
+    padding: 6px 10px;
+    border: 1px solid #6359c1;
+    border-radius: 4px;
+    background: #fff;
+    color: #2c2563;
+    font: 12px sans-serif;
+    cursor: pointer;
+}
+.gp-save-status[data-state="error"], .gp-save-status[data-state="offline"] {
+    border-color: #a13222;
+    color: #a13222;
+}

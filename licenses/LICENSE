@@ -1,0 +1,29 @@
+GroovePizza — first-party software rights notice
+
+Copyright (c) 2014–2020 New York University.
+
+All rights reserved in New York University's original software contributions
+identified in RIGHTS.md, subject to existing licenses, agreements, permissions
+and applicable law. This notice does not grant a new public software license.
+Use, copying, modification and distribution beyond an existing permission
+require authorization from the relevant rights holder.
+
+The reservation applies only to NYU-owned original contributions. It does not
+claim every line in a listed file, change ownership of third-party material,
+replace another applicable license, or revoke any license or permission
+previously granted. Where a component, integration or contribution has its
+own license, that license governs that material and its applicable conditions
+remain in force. Existing copyright, attribution and license notices remain.
+
+Music, recordings, compositions, lyrics, scores, images, fonts, soundfonts,
+models, datasets, trademarks, and user or research content have separate
+rights. This software notice grants no rights in them and makes no ownership
+claim over content supplied by others. See ASSET_RIGHTS.md and
+THIRD_PARTY_NOTICES.md for the recorded exclusions and component evidence.
+
+Repository access, a build instruction or an integration with another service
+does not itself supply a commercial license or permission for that service's
+content. Existing authorized uses and permissions remain unaffected.
+
+For permissions beyond existing terms, contact New York University through
+NYU Music Experience Design Lab. No trademark license is granted here.
