@@ -1,3 +1,137 @@
-.dev-banner{background:#163c48;color:#fff;text-align:center;padding:9px 12px;font:14px/1.4 system-ui,sans-serif}.notebook-menu{font:14px/1.5 system-ui,sans-serif;padding:0 10px 24px;color:#253d47;max-width:100%;box-sizing:border-box}.notebook-menu h2{font-size:22px;margin:10px 0}.notebook-menu h2 small{font-size:12px}.notebook-menu p{margin:10px 0}.notebook-menu .menu-button{white-space:normal;line-height:1.4;margin-bottom:8px;padding:10px;height:auto;box-sizing:border-box}.notebook-menu details{border-top:1px solid #bccbd0;padding:10px 0}.notebook-menu summary{cursor:pointer;font-weight:600;font-size:15px}.notebook-menu a{color:#175a78;text-decoration:underline}.notebook-menu input[type=file]{max-width:100%;font-size:12px;display:block}.notebook-menu ol{padding-left:20px}.notebook-footnote{font-size:12px}.save-message,.notebook-message{font-weight:600}.gp-save-status{font-size:11px;max-width:165px}.toolbar-tray{overflow-y:auto}
-.gp-menu.notebook-panel{position:absolute;left:120px!important;top:0!important;bottom:0;width:380px;max-width:calc(100% - 120px);height:auto;z-index:15;background:#f5faf9;box-shadow:4px 0 18px #0004;border-right:1px solid #c7d8d4;overflow:auto}.notebook-panel .notebook-menu{display:block!important;text-align:left;overflow:auto;height:auto;padding:18px 20px 36px}.notebook-menu .menu-button{display:block;width:100%;max-width:none;background:#e3efed;color:#163c48;text-transform:none;font:600 14px/1.4 system-ui,sans-serif;border:1px solid #a8c3bd;border-radius:7px;cursor:pointer;min-height:38px}.notebook-menu #save-version{background:#176c5c;color:white}.notebook-menu .menu-button:focus-visible,.notebook-menu summary:focus-visible{outline:3px solid #1e80ba;outline-offset:2px}.notebook-menu button:disabled{opacity:.55;cursor:wait}.gp-menu.notebook-panel.horizontal{left:8px!important;top:100px!important;bottom:0;width:calc(100% - 16px);max-width:500px;height:auto}.gp-save-status{z-index:16}
-.notebook-panel .share-menu #retry-save{max-width:none;width:100%;padding:10px;font-size:14px}.notebook-menu .import-label{cursor:default}
+.dev-banner{background:#163c48;color:#fff;text-align:center;padding:9px 12px;font:14px/1.4 system-ui,sans-serif}
+
+/* Keep save status and preferences in one row outside the instrument/Notebook. */
+body{display:flex;flex-direction:column}
+body>.container{flex:1;min-height:0;height:auto!important}
+.privacy-footer.privacy-tool-footer{position:static;flex:none;box-sizing:border-box;width:100%;max-width:none!important;min-height:34px;margin:0;text-align:right;border-radius:0}
+.gp-status-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 10px!important;background:#fff;border-top:1px solid #b5c0c8}
+.gp-status-footer .gp-save-status{position:static;z-index:auto;flex:0 1 auto;max-width:none;margin:0;padding:6px 0;min-height:32px;border:0;border-radius:0;background:transparent;text-align:left;text-decoration:underline;font:12px/1.2 system-ui,sans-serif}
+.gp-status-footer #privacy-preferences{flex:none}
+
+/* Keep the existing toolbar-tray layout and Space skin used by Specials/Shapes. */
+.gp-menu.notebook-panel,.gp-menu.download-panel{left:120px!important;top:0!important;bottom:190px;width:380px;max-width:calc(100% - 120px);height:auto;z-index:15;overflow:auto}
+.notebook-panel .notebook-menu,.download-panel .notebook-menu{display:block!important;text-align:left;overflow:visible;height:auto;padding:18px 20px 24px}
+.notebook-menu{font:14px/1.5 'Lato',sans-serif;color:#e1e1e1;max-width:100%;box-sizing:border-box}
+.notebook-menu h2{font-size:22px;margin:10px 0}
+.notebook-menu p{margin:10px 0}
+.notebook-menu .menu-button{display:block;width:100%;max-width:none;white-space:normal;margin:0 0 8px;padding:10px;height:auto;box-sizing:border-box;text-transform:none;font:inherit;border:1px solid #aaa3df;border-radius:4px;cursor:pointer;min-height:44px}
+.notebook-menu .menu-button:hover{background-color:#3d2e7f}
+.notebook-menu .menu-button:active{background-color:#0074ff;color:#fff}
+.notebook-menu .menu-button:focus-visible,.notebook-menu summary:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.notebook-menu button:disabled{opacity:.55;cursor:wait}
+.notebook-menu details{border-top:1px solid #aaa3df;padding:10px 0}
+.notebook-menu summary{cursor:pointer;font-weight:600;font-size:15px}
+.notebook-menu a{color:#fff;text-decoration:underline}
+.notebook-menu input[type=file]{max-width:100%;font-size:12px;display:block}
+.notebook-menu ol{padding-left:20px}
+.notebook-section{margin:18px 0}
+.notebook-section h3{font-size:16px;margin:0 0 8px}
+.notebook-versions-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.notebook-versions-heading h3{margin:0}
+.notebook-versions-heading #save-version{flex:none;width:auto;margin:0;border-color:#fff;font-weight:700}
+.notebook-menu .notebook-hint{font-size:12px;line-height:1.4;color:#e1dff4}
+.notebook-menu .notebook-message:empty{display:none}
+.notebook-menu #notebook-versions{list-style:none;padding:0;margin:8px 0 0}
+.notebook-version{display:flex;align-items:flex-start;gap:10px;padding:10px;margin:0 0 8px;border:1px solid #aaa3df;border-radius:4px}
+.notebook-version-info{flex:1;min-width:0;overflow-wrap:anywhere}
+.notebook-version-info strong,.notebook-version-info span,.notebook-version-info time{display:block}
+.notebook-version-name{margin:4px 0;font-size:13px;line-height:1.4}
+.notebook-version .menu-button{flex:0 0 74px;width:74px;margin:0;padding:8px;font-size:13px}
+.notebook-finish{border-top:1px solid #aaa3df;padding-top:16px;margin-top:18px}
+.notebook-menu a:focus-visible,.notebook-menu input:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.main-menu button.share:focus-visible{outline:3px solid #fff;outline-offset:-2px}
+@media(max-height:500px){
+ .notebook-panel .notebook-menu,.download-panel .notebook-menu{padding:10px 16px 16px}
+ .notebook-menu h2{font-size:18px;margin:0 0 4px}
+ .notebook-section{margin:8px 0 14px}
+ .notebook-section h3{font-size:14px;margin-bottom:4px}
+ .notebook-menu .save-message{font-size:12px;margin:4px 0}
+}
+.notebook-footnote{font-size:12px}
+.download-menu .continuation-body{font-size:14px;line-height:1.5}
+.download-menu .code-copy-fallback{display:block;font-size:14px;line-height:1.5}
+.download-menu .code-copy-fallback textarea{display:block;box-sizing:border-box;width:100%;min-height:180px;margin:8px 0;padding:8px;background:#3d2e7f;color:#fff;border:1px solid #aaa3df;font:12px/1.5 monospace}
+.download-menu .code-copy-fallback textarea:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.save-message,.notebook-message{font-weight:600}
+.notebook-menu .notebook-exports{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.notebook-exports .menu-button{display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 6px;margin:0;background-image:none!important}
+.notebook-exports .download-icon{display:block;flex:none;width:55px;height:54px;color:#3d2e7f}
+.notebook-exports .menu-button:hover .download-icon,.notebook-exports .menu-button:active .download-icon{color:#fff}
+.notebook-menu .import-label{cursor:default}
+.gp-menu.notebook-panel.horizontal,.gp-menu.download-panel.horizontal{left:8px!important;top:100px!important;bottom:var(--gp-notebook-bottom, 60px);width:calc(100% - 16px);max-width:500px;height:auto}
+.gp-save-status{font-size:11px;max-width:165px;z-index:16}
+.toolbar-tray{overflow-y:auto}
+.gp-edit-actions{position:absolute;top:12px;right:12px;z-index:16;display:flex;flex-direction:column;gap:8px}
+.gp-edit-actions button{display:flex;align-items:center;gap:5px;min-width:76px;min-height:44px;padding:6px 10px;border:1px solid #aaa3df;border-radius:22px;background:#5640b2;color:#fff;font:14px 'Lato',sans-serif;cursor:pointer}
+.gp-edit-actions svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.gp-undo:disabled{opacity:1;background:#3d2e7f;cursor:default}
+.gp-save-snapshot:disabled{opacity:.65;cursor:wait}
+.gp-edit-actions button:focus-visible{outline:3px solid white;outline-offset:3px}
+@media(max-width:879px){
+ .main-menu.horizontal{width:calc(100% - 56px);height:100px!important}
+ .gp-edit-actions{top:3px;right:6px;flex-direction:column;gap:6px}
+ .gp-edit-actions button{min-width:44px;width:44px;padding:9px}
+ .gp-edit-actions span{display:none}
+}
+.slider-target:focus-visible{stroke:#fff;stroke-width:2;outline:none}
+/* Leave the browser-backup safeguard available on every device. */
+@media(max-width:1024px),(pointer:coarse) and (max-width:1366px){.notebook-downloads,.notebook-menu #export-scratch{display:none}}
+
+/* Gallery thumbnails are generated lazily from each immutable saved groove. */
+.notebook-menu [hidden]{display:none!important}
+.notebook-version{display:grid;grid-template-columns:100px minmax(0,1fr);gap:10px;align-items:center}
+.notebook-version.newly-kept-version{border-color:#fff;box-shadow:inset 3px 0 #fff}
+.notebook-thumbnail{display:block;width:100px;height:100px;object-fit:contain;align-self:start}
+.notebook-version-actions{display:flex;gap:8px;grid-column:1/-1}
+.notebook-version .menu-button{flex:1;width:auto;min-height:44px}
+.notebook-version [data-action=delete]{flex:0 1 80px;border-color:transparent}
+.notebook-version-title{display:block;width:100%;padding:3px 0;text-align:left;font:700 15px/1.4 'Lato',sans-serif;color:inherit;background:none;border:0;border-bottom:1px dashed #aaa3df;cursor:text;overflow-wrap:anywhere;min-height:36px}
+.notebook-version-title:focus-visible{outline:3px solid white;outline-offset:2px}
+.notebook-version-info .notebook-version-static-title{display:none}
+.notebook-title-input{width:100%;box-sizing:border-box;font:700 15px/1.4 'Lato',sans-serif;padding:6px;color:#231650;background:#fff;border:1px solid #aaa3df;border-radius:3px;min-height:44px}
+.notebook-menu #notebook-deleted-versions{list-style:none;padding:0}
+#notebook-deleted-versions li{display:grid;grid-template-columns:100px minmax(0,1fr);align-items:center;gap:10px;border-bottom:1px solid #aaa3df;padding:8px 0}
+#notebook-deleted-versions li>span{flex:1;overflow-wrap:anywhere;min-width:0}
+#notebook-deleted-versions .menu-button{grid-column:1/-1;width:auto;margin:0}
+.download-message:empty{display:none}
+.main-menu:not(.horizontal){height:auto;bottom:190px;overflow-y:auto;scrollbar-width:thin}
+.main-menu:not(.horizontal) button.logo{height:90px;min-height:90px}
+.main-menu button.tray-option{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;flex:none;width:90px!important;height:76px!important;margin:2px 5px;padding:3px;border-radius:4px;background:none!important;font:12px/1.1 'Lato',sans-serif;color:#e1e1e1}
+.tray-icon,.continue-icon{display:block;flex:none;width:48px;height:48px;color:#3d2e7f}
+.tray-icon .icon-cutout{fill:none;stroke:#4d38a0;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.continue-icon{background:url(../img/share.svg) no-repeat center/contain}
+.main-menu .tray-option.active .tray-icon{color:#0074ff}
+.main-menu .tray-option.active .continue-icon{background-image:url(../img/share-active.svg)}
+.main-menu button.tray-option:hover{background-color:#6359c1!important}
+.main-menu button.tray-option:focus-visible{outline:3px solid #fff;outline-offset:-2px}
+.main-menu .tray-option.active{box-shadow:inset 0 -3px #fff}
+.main-menu.horizontal .tray-option{flex:1;min-width:0;width:auto!important;height:90px!important;margin:0;word-break:normal}
+.main-menu.horizontal button.logo{flex:none;width:66px;min-width:44px}
+@media(max-width:540px){
+ .main-menu.horizontal button.logo{width:44px;margin-right:2px;background-size:contain}
+ .main-menu.horizontal .tray-option{font-size:10px}
+ .main-menu.horizontal .tray-icon,.main-menu.horizontal .continue-icon{width:40px;height:40px}
+}
+@media(max-width:1024px),(pointer:coarse){
+ .notebook-version-title{display:none}
+ .notebook-version-info .notebook-version-static-title{display:block}
+}
+
+.notebook-name-button{display:block;max-width:100%;padding:4px 0;color:inherit;font:700 15px/1.4 'Lato',sans-serif;background:none;border:0;border-bottom:1px dashed #aaa3df;text-align:left;overflow-wrap:anywhere;cursor:text}
+.notebook-name-button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+#notebook-name-form{padding:10px 0}
+#notebook-name-form label{display:block;margin-bottom:4px}
+.notebook-name-actions{display:flex;gap:8px;margin-top:8px}
+.notebook-name-actions .menu-button{flex:1}
+.notebook-menu .save-message{font-size:12px;font-weight:400}
+
+/* Device policy uses device signals, not the width of a desktop window. */
+.gp-device-phone .download-option,.gp-device-tablet .download-option{display:none!important}
+.gp-device-rotation{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;color:#fff;text-align:center;font:18px/1.5 'Lato',sans-serif}
+.gp-device-rotation[hidden]{display:none}
+.gp-device-rotation img{width:min(320px,70%);max-height:40%;object-fit:contain}
+.gp-orientation-blocked>.gp-viewport,.gp-orientation-blocked>.gp-menu,.gp-orientation-blocked>.gp-edit-actions{visibility:hidden!important;pointer-events:none!important}
+.gp-device-phone .notebook-version,.gp-device-phone #notebook-deleted-versions li{grid-template-columns:112px minmax(0,1fr)}
+.gp-device-phone .notebook-thumbnail{width:112px;height:112px}
+.gp-device-phone .notebook-version-title,.gp-device-tablet .notebook-version-title{display:none}
+.gp-device-phone .notebook-version-static-title,.gp-device-tablet .notebook-version-static-title{display:block}

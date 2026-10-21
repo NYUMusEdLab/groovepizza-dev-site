@@ -48,6 +48,17 @@ today's upstream MIT label. NYU's original integration code does not confer
 rights in Noteflight, Soundtrap, social-platform APIs, partner branding or
 content returned by those services. Existing integration agreements govern.
 
+## Experimental Ableton export template
+
+`app/data/ableton-template.json` contains sanitized default document structure
+derived from the ISC-declared `ununu-p2p/als-parser` test fixture at revision
+`71b59b3cc2fd90cd24be9b6649104493cf4b9fa0`. Its original notes, devices, samples,
+file references and view data were removed. See
+[the component notice](notices/release-components/ableton-template.txt) for
+source, attribution, license and modification details. This material retains
+its separate terms and is excluded from the first-party NYU reservation.
+No Ableton SDK, branding assets, instruments or sound packs are included.
+
 ## Guidance
 
 - [MIT license text](https://opensource.org/license/mit): retain its required copyright and permission notices.

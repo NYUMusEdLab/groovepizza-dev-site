@@ -1,0 +1,32 @@
+Ableton Live document format reference
+
+The sanitized default MIDI-track, master-track and clip XML in
+app/data/ableton-template.json was derived from the als-parser test fixture:
+https://github.com/ununu-p2p/als-parser/blob/71b59b3cc2fd90cd24be9b6649104493cf4b9fa0/test/res/drums-midi/drums-midi.als
+Git blob: 616ae3380ba62bb8962bc9df72c4ae251ec34366
+Original Creator: Ableton Live 10.1.15; document schema 10.0_377.
+Package author: Shresth Agrawal. Package license: ISC.
+License declaration:
+https://github.com/ununu-p2p/als-parser/blob/71b59b3cc2fd90cd24be9b6649104493cf4b9fa0/package.json
+
+ISC License
+Copyright Shresth Agrawal and als-parser contributors.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Groove Pizza modifications: remove original notes, device chains, samples,
+file references, return tracks and stored view data; replace musical content,
+tempo, gain, scenes and loop lengths with validated current groove data.
+No original instrument presets, sound recordings or sample packs are bundled.
+The generated sets are experimental and have not yet been validated in Live.
+This is not Ableton's official Live Set Export SDK or an endorsed integration.
